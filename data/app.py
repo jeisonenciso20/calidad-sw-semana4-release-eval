@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 import json
 from datetime import datetime
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 DATA_PATH = "data\\appointments.json"
 
@@ -52,5 +52,5 @@ def create_appointment():
     save_appointments(appts)
     return {"id": new_id}, 201
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     app.run(debug=True)
